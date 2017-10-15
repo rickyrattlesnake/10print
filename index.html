@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Print 10</title>
+  <title>10 Print</title>
 </head>
-<body>
-  <p>Hello</p>
+<body style="margin: 0px;">
+  <div style="word-wrap: break-word; line-height: 1em;" id="content"></div>
+<script type="text/javascript">
+  var boxes = ["╱", "╲"];
+  var max = 4000;
+  function writeNext()
+      {
+    document.getElementById('content').innerHTML +=
+    boxes[Math.round(Math.random())];
+      }
+  var count = 0;
+  function run() {
+    writeNext();
+    if(count++ < max) {
+      setTimeout(run,5);
+    }
+  }
+  run();
+  </script>
 </body>
+
 </html>
